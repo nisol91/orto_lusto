@@ -9,6 +9,8 @@
           v-if="loaded"
           :class="[{ menuBkg: scroll > 200 }]"
         >
+          questo e' l orto di luca il ricco, il magnifico agricoltore di
+          vigheffio che tutti amiamo
           <!-- <div class="mTopEl mCont" v-if="false">
             <div class="mLine" :class="[{ bkgBlack: notHome }]"></div>
             <router-link class="menuEl" :to="{ name: 'mContacts' }">

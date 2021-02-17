@@ -19,6 +19,7 @@ import MBlogPost from "./components/metamorphosis/MBlogPost.vue";
 import MSingleWork from "./components/metamorphosis/MSingleWork.vue";
 
 import HomeZentrails from "./components/zentrails/HomeZentrails.vue";
+import HomeLusto from "./components/orto/HomeLusto.vue";
 
 
 
@@ -53,6 +54,11 @@ const routes = [
     },
     {
         path: "/",
+        component: HomeLusto,
+        name: "homeLusto"
+    },
+    {
+        path: "/aaaaa",
         component: HomeZentrails,
         name: "homeZentrails",
         // protezione della rotta se non loggato

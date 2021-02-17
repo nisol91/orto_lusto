@@ -115,14 +115,13 @@ const i18n = new VueI18n({
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAfRB6Q1hQ8-CmsjxiG0Na6lwNsFJGgtzU",
-  authDomain: "zentrails-499e2.firebaseapp.com",
-  databaseURL: "https://zentrails-499e2.firebaseio.com",
-  projectId: "zentrails-499e2",
-  storageBucket: "zentrails-499e2.appspot.com",
-  messagingSenderId: "981089706929",
-  appId: "1:981089706929:web:013915f566702017dfd390",
-  measurementId: "G-2GGS1JXV9X"
+  apiKey: "AIzaSyBfgVGRlK4qE_fHTtN4seQ8GcykojnXx18",
+  authDomain: "lustoorto.firebaseapp.com",
+  projectId: "lustoorto",
+  storageBucket: "lustoorto.appspot.com",
+  messagingSenderId: "87963607023",
+  appId: "1:87963607023:web:5a04541f203002846da01a",
+  measurementId: "G-T0KCZ9B3YN"
 };
 
 // Initialize Firebase
