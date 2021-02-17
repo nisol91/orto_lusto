@@ -57,61 +57,63 @@
         </v-btn>
       </v-form>
     </div>
-
-    <table class="table mt-4">
-      <thead>
-        <tr>
-          <th scope="col">nome</th>
-          <th scope="col">priorità</th>
-          <th scope="col">stagione</th>
-          <th scope="col">zona</th>
-          <th scope="col">luce</th>
-          <th scope="col">acqua</th>
-          <th scope="col">ph</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(ortaggio, i) in ortaggi" :key="i + '_ortaggio'" class="">
-          <td class="">{{ ortaggio.title.rendered }}</td>
-          <td
-            v-for="(cf, i) in ortaggio.acf.ortaggi_fields"
-            :key="i + '_ortaggio_cf'"
-          >
-            <span v-if="cf !== ''">{{ cf }}</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
+    <div class="table-responsive">
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">nome</th>
+            <th scope="col">priorità</th>
+            <th scope="col">stagione</th>
+            <th scope="col">zona</th>
+            <th scope="col">luce</th>
+            <th scope="col">acqua</th>
+            <th scope="col">ph</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(ortaggio, i) in ortaggi" :key="i + '_ortaggio'" class="">
+            <td class="">{{ ortaggio.title.rendered }}</td>
+            <td
+              v-for="(cf, i) in ortaggio.acf.ortaggi_fields"
+              :key="i + '_ortaggio_cf'"
+            >
+              <span v-if="cf !== ''">{{ cf }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="filteredValues">filtered values</div>
-    <table class="table mt-4">
-      <thead>
-        <tr>
-          <th scope="col">nome</th>
-          <th scope="col">priorità</th>
-          <th scope="col">stagione</th>
-          <th scope="col">zona</th>
-          <th scope="col">luce</th>
-          <th scope="col">acqua</th>
-          <th scope="col">ph</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="(ortaggio, i) in ortaggi_filtered"
-          :key="i + '_ortaggio'"
-          class=""
-        >
-          <td class="">{{ ortaggio.title.rendered }}</td>
-          <td
-            v-for="(cf, i) in ortaggio.acf.ortaggi_fields"
-            :key="i + '_ortaggio_cf'"
+    <div class="table-responsive">
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">nome</th>
+            <th scope="col">priorità</th>
+            <th scope="col">stagione</th>
+            <th scope="col">zona</th>
+            <th scope="col">luce</th>
+            <th scope="col">acqua</th>
+            <th scope="col">ph</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="(ortaggio, i) in ortaggi_filtered"
+            :key="i + '_ortaggio'"
+            class=""
           >
-            {{ cf }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <td class="">{{ ortaggio.title.rendered }}</td>
+            <td
+              v-for="(cf, i) in ortaggio.acf.ortaggi_fields"
+              :key="i + '_ortaggio_cf'"
+            >
+              {{ cf }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 <script>
@@ -231,5 +233,16 @@ export default {
   justify-content: flex-start;
   font-size: 25px;
   font-weight: bold;
+}
+// ##
+@media (max-width: 800px) {
+  .ortoBox {
+    padding: 5px;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 </style>
