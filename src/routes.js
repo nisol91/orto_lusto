@@ -47,210 +47,210 @@ import firebase from 'firebase'
 import store from "./store"
 
 const routes = [
-    {
-        path: "/quasarEx",
-        component: App,
-        name: "exampleQuasar"
-    },
+    // {
+    //     path: "/quasarEx",
+    //     component: App,
+    //     name: "exampleQuasar"
+    // },
     {
         path: "/",
         component: HomeLusto,
         name: "homeLusto"
     },
-    {
-        path: "/aaaaa",
-        component: HomeZentrails,
-        name: "homeZentrails",
-        // protezione della rotta se non loggato
-        // beforeEnter: (to, from, next) => {
-        //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-        //     else next()
-        // }
-    },
-    {
-        path: "/m-home",
-        component: MHome,
-        name: "mHome",
-        // protezione della rotta se non loggato
-        // beforeEnter: (to, from, next) => {
-        //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-        //     else next()
-        // }
-    },
-    {
-        path: "/m-we-are",
-        component: MWeAre,
-        name: "mWeAre",
-        // protezione della rotta se non loggato
-        // beforeEnter: (to, from, next) => {
-        //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-        //     else next()
-        // }
-    },
-    {
-        path: "/m-we-do",
-        component: MWeDo,
-        name: "mWeDo",
-        // protezione della rotta se non loggato
-        // beforeEnter: (to, from, next) => {
-        //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-        //     else next()
-        // }
-    },
-    {
-        path: "/m-we-do/:id",
-        component: MSingleWork,
-        name: "mSingleWork",
-        // protezione della rotta se non loggato
-        // beforeEnter: (to, from, next) => {
-        //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-        //     else next()
-        // }
-        beforeEnter: (to, from, next) => {
-            window.scrollTo(0, 0);
-            next()
-        }
-    },
-    {
-        path: "/m-we-tell/:id",
-        component: MBlogPost,
-        name: "mBlogPost",
-        // protezione della rotta se non loggato
-        // beforeEnter: (to, from, next) => {
-        //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-        //     else next()
-        // }
-        beforeEnter: (to, from, next) => {
-            window.scrollTo(0, 0);
-            next()
+    // {
+    //     path: "/aaaaa",
+    //     component: HomeZentrails,
+    //     name: "homeZentrails",
+    //     // protezione della rotta se non loggato
+    //     // beforeEnter: (to, from, next) => {
+    //     //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //     //     else next()
+    //     // }
+    // },
+    // {
+    //     path: "/m-home",
+    //     component: MHome,
+    //     name: "mHome",
+    //     // protezione della rotta se non loggato
+    //     // beforeEnter: (to, from, next) => {
+    //     //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //     //     else next()
+    //     // }
+    // },
+    // {
+    //     path: "/m-we-are",
+    //     component: MWeAre,
+    //     name: "mWeAre",
+    //     // protezione della rotta se non loggato
+    //     // beforeEnter: (to, from, next) => {
+    //     //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //     //     else next()
+    //     // }
+    // },
+    // {
+    //     path: "/m-we-do",
+    //     component: MWeDo,
+    //     name: "mWeDo",
+    //     // protezione della rotta se non loggato
+    //     // beforeEnter: (to, from, next) => {
+    //     //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //     //     else next()
+    //     // }
+    // },
+    // {
+    //     path: "/m-we-do/:id",
+    //     component: MSingleWork,
+    //     name: "mSingleWork",
+    //     // protezione della rotta se non loggato
+    //     // beforeEnter: (to, from, next) => {
+    //     //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //     //     else next()
+    //     // }
+    //     beforeEnter: (to, from, next) => {
+    //         window.scrollTo(0, 0);
+    //         next()
+    //     }
+    // },
+    // {
+    //     path: "/m-we-tell/:id",
+    //     component: MBlogPost,
+    //     name: "mBlogPost",
+    //     // protezione della rotta se non loggato
+    //     // beforeEnter: (to, from, next) => {
+    //     //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //     //     else next()
+    //     // }
+    //     beforeEnter: (to, from, next) => {
+    //         window.scrollTo(0, 0);
+    //         next()
 
-        }
-    },
-    {
-        path: "/m-we-tell",
-        component: MWeTell,
-        name: "mWeTell",
-        // protezione della rotta se non loggato
-        // beforeEnter: (to, from, next) => {
-        //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-        //     else next()
-        // }
-    },
-    {
-        path: "/m-contacts",
-        component: MContacts,
-        name: "mContacts",
-        // protezione della rotta se non loggato
-        // beforeEnter: (to, from, next) => {
-        //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-        //     else next()
-        // }
-    },
-    {
-        path: "/m-shop",
-        component: MShop,
-        name: "mShop",
-        // protezione della rotta se non loggato
-        beforeEnter: (to, from, next) => {
-            if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-            else next()
-        }
-    },
-    {
-        path: "/projects",
-        component: Projects,
-        name: "projects"
-    },
-    {
-        path: "/project/:id",
-        component: SingleProject,
-        name: "project"
-    },
-    {
-        path: "/auth/login",
-        component: Login,
-        name: "login"
-    },
-    {
-        path: "/auth/register",
-        component: Register,
-        name: "register"
-    },
-    {
-        path: "/auth/forgot-password",
-        name: "forgotPassword",
-        component: ForgotPassword,
-        // protezione della rotta se non loggato
-        beforeEnter(to, from, next) {
-            const user = firebase.auth().currentUser;
-            if (user) {
-                next({ name: "home" });
-            } else {
-                next();
-            }
-        },
-    },
-    {
-        path: "/userProfile",
-        component: UserProfile,
-        name: "userProfile",
-        // protezione della rotta se non loggato
-        beforeEnter: (to, from, next) => {
-            if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
-            else next()
-        }
-    },
-    {
-        path: "/editLists",
-        component: EditMyLists,
-        name: "editLists",
-        // protezione della rotta se non loggato
-        beforeEnter: (to, from, next) => {
-            if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'toccaVinoHome' })
-            else next()
-        }
-    },
-    {
-        path: "/basket",
-        component: ToccaVinoBasket,
-        name: "toccaVinoBasket"
-    },
-    {
-        path: "/",
-        component: ToccaVinoHome,
-        name: "toccaVinoHome"
-    },
-    {
-        path: "/tocca-vino-products",
-        component: ToccaVinoProducts,
-        name: "toccaVinoProducts"
-    },
-    {
-        path: "/edit-wine-event/:id",
-        component: ToccaVinoEditEvent,
-        name: "toccaVinoEditEvent",
-        // protezione della rotta se non loggato
-        afterEnter: (to, from, next) => {
-            if (to.name !== 'login' && !store.state.isLoggedIn) next({ name: 'home' })
-            else next()
-        }
-    },
-    {
-        path: "/add-wine-event",
-        component: ToccaVinoAddEvent,
-        name: "toccaVinoAddEvent",
-        // protezione della rotta se non loggato
-        afterEnter: (to, from, next) => {
-            if (to.name !== 'login' && !store.state.isLoggedIn) next({ name: 'home' })
-            else next()
-        }
-    },
-    {
-        path: "/support-us",
-        component: ToccaVinoPayment,
-        name: "toccaVinoPayment"
-    },
-    { path: '*', component: NotFound }
+    //     }
+    // },
+    // {
+    //     path: "/m-we-tell",
+    //     component: MWeTell,
+    //     name: "mWeTell",
+    //     // protezione della rotta se non loggato
+    //     // beforeEnter: (to, from, next) => {
+    //     //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //     //     else next()
+    //     // }
+    // },
+    // {
+    //     path: "/m-contacts",
+    //     component: MContacts,
+    //     name: "mContacts",
+    //     // protezione della rotta se non loggato
+    //     // beforeEnter: (to, from, next) => {
+    //     //     if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //     //     else next()
+    //     // }
+    // },
+    // {
+    //     path: "/m-shop",
+    //     component: MShop,
+    //     name: "mShop",
+    //     // protezione della rotta se non loggato
+    //     beforeEnter: (to, from, next) => {
+    //         if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //         else next()
+    //     }
+    // },
+    // {
+    //     path: "/projects",
+    //     component: Projects,
+    //     name: "projects"
+    // },
+    // {
+    //     path: "/project/:id",
+    //     component: SingleProject,
+    //     name: "project"
+    // },
+    // {
+    //     path: "/auth/login",
+    //     component: Login,
+    //     name: "login"
+    // },
+    // {
+    //     path: "/auth/register",
+    //     component: Register,
+    //     name: "register"
+    // },
+    // {
+    //     path: "/auth/forgot-password",
+    //     name: "forgotPassword",
+    //     component: ForgotPassword,
+    //     // protezione della rotta se non loggato
+    //     beforeEnter(to, from, next) {
+    //         const user = firebase.auth().currentUser;
+    //         if (user) {
+    //             next({ name: "home" });
+    //         } else {
+    //             next();
+    //         }
+    //     },
+    // },
+    // {
+    //     path: "/userProfile",
+    //     component: UserProfile,
+    //     name: "userProfile",
+    //     // protezione della rotta se non loggato
+    //     beforeEnter: (to, from, next) => {
+    //         if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'home' })
+    //         else next()
+    //     }
+    // },
+    // {
+    //     path: "/editLists",
+    //     component: EditMyLists,
+    //     name: "editLists",
+    //     // protezione della rotta se non loggato
+    //     beforeEnter: (to, from, next) => {
+    //         if (to.name !== 'login' && localStorage.getItem("isLoggedIn") === "false") next({ name: 'toccaVinoHome' })
+    //         else next()
+    //     }
+    // },
+    // {
+    //     path: "/basket",
+    //     component: ToccaVinoBasket,
+    //     name: "toccaVinoBasket"
+    // },
+    // {
+    //     path: "/",
+    //     component: ToccaVinoHome,
+    //     name: "toccaVinoHome"
+    // },
+    // {
+    //     path: "/tocca-vino-products",
+    //     component: ToccaVinoProducts,
+    //     name: "toccaVinoProducts"
+    // },
+    // {
+    //     path: "/edit-wine-event/:id",
+    //     component: ToccaVinoEditEvent,
+    //     name: "toccaVinoEditEvent",
+    //     // protezione della rotta se non loggato
+    //     afterEnter: (to, from, next) => {
+    //         if (to.name !== 'login' && !store.state.isLoggedIn) next({ name: 'home' })
+    //         else next()
+    //     }
+    // },
+    // {
+    //     path: "/add-wine-event",
+    //     component: ToccaVinoAddEvent,
+    //     name: "toccaVinoAddEvent",
+    //     // protezione della rotta se non loggato
+    //     afterEnter: (to, from, next) => {
+    //         if (to.name !== 'login' && !store.state.isLoggedIn) next({ name: 'home' })
+    //         else next()
+    //     }
+    // },
+    // {
+    //     path: "/support-us",
+    //     component: ToccaVinoPayment,
+    //     name: "toccaVinoPayment"
+    // },
+    // { path: '*', component: NotFound }
 
     // // un altro modo alternativo per importare un componente vue
     // {
